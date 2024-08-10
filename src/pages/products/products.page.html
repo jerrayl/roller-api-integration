@@ -1,9 +1,9 @@
 <nz-layout>
   <header-component [style.position]="'sticky'" [style.top]="0" [style.z-index]="100" />
 
-  <nz-content>
+  <nz-content [style.margin-bottom.%]="15">
     <cardcontainer-component />
   </nz-content>
 
-  <footer-component [style.position]="'sticky'" [style.bottom]="0" [style.z-index]="100"/>
+  <footer-component [style.position]="'fixed'" [style.width.%]="100" [style.bottom]="0"/>
 </nz-layout>

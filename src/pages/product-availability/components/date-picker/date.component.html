@@ -1,0 +1,12 @@
+<div nz-flex nzVertical nzJustify="center">
+    @if(isToday){
+        Today
+    }
+    @else {
+        {{dayMappings[date.getDay()]}}
+        <span>
+            {{date.getDate()}}
+            {{monthMappings[date.getMonth()]}}
+        </span>
+    }
+</div>

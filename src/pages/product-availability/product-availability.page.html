@@ -1,5 +1,25 @@
-<div>
-  <h2>
-    {{productAvailabilityService.productAvailability()?.name}}
-  </h2>
-</div>
+<nz-layout [style.height.%]="100">
+  @if(!product()){
+  <nz-content nz-flex [style.height.%]="100" nzJustify="center" nzAlign="center">
+    <nz-spin nzSimple nzSize="large"></nz-spin>
+  </nz-content>
+  }
+  @else{
+  <nz-content>
+    <nz-page-header class="header" (back)="onBack()" nzBackIcon>
+      <nz-page-header-title>{{product()!.name}}</nz-page-header-title>
+      @if(productType()){
+        <nz-page-header-extra>
+          <nz-tag nzColor="blue">{{productType()}}</nz-tag>
+        </nz-page-header-extra>
+      }
+    </nz-page-header>
+    <img [alt]="product()!.name" [src]="product()!.imageUrl" />
+    <nz-descriptions nzColon="false">
+      <nz-descriptions-item>{{product()!.description}}</nz-descriptions-item>
+    </nz-descriptions>
+    <h3>Select a date:</h3>
+    <date-picker-component [selectedDate]="selectedDate()" (selectDate)="selectedDate.set($event)"/>
+  </nz-content>
+  }
+</nz-layout>

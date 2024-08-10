@@ -1,0 +1,11 @@
+<div nz-flex nzGap="middle" nzJustify="center">
+    @for (date of dateOptions(); track date.valueOf()) {
+    <button nz-button nz-flex nzAlign="center" nzSize="large"
+        [nzType]="compareDateComponent(date, selectedDate()) === 0 ? 'primary': 'default'"
+        (click)="selectDate.emit(date)" 
+        [style.box-sizing]="'content-box'"
+    >
+        <date-component [date]="date" [isToday]="compareDateComponent(date, today) === 0" />
+    </button>
+    }
+</div>

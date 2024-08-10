@@ -1,6 +1,15 @@
 <nz-card nzHoverable [nzCover]="coverTemplate" [style.border-radius.px]="20" (click)="navigateToProduct(id)">
-  <nz-card-meta [nzTitle]="title" [nzDescription]="description"></nz-card-meta>
+  <nz-card-meta [nzTitle]="titleTemplate" [nzDescription]="description"></nz-card-meta>
 </nz-card>
 <ng-template #coverTemplate>
-  <img [alt]="title" [src]="imageUrl" [style.max-height.px]="150" [style.border-top-left-radius.px]="20" [style.border-top-right-radius.px]="20"/>
+  <img [alt]="title" [src]="imageUrl" [style.max-height.px]="150" [style.border-top-left-radius.px]="20"
+    [style.border-top-right-radius.px]="20" />
+</ng-template>
+<ng-template #titleTemplate>
+  <div nz-flex nzJustify="space-between">
+    <p>{{title}}</p>
+    @if(minProductCost()){
+    <div class="subtitle">From ${{minProductCost()}}</div>
+    }
+  </div>
 </ng-template>
