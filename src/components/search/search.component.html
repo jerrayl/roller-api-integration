@@ -1,0 +1,8 @@
+<div>
+    <nz-input-group [nzSuffix]="suffixIconSearch" [style.border-radius.px]="10">
+        <input placeholder="Search products" nz-input [(ngModel)]="productsService.searchValue" (input)="onInput($event)"/>
+    </nz-input-group>
+    <ng-template #suffixIconSearch>
+        <span nz-icon nzType="search"></span>
+    </ng-template>
+</div>

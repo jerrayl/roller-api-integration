@@ -10,7 +10,7 @@ export class ProductsService {
   searchValue = signal('');
   products: WritableSignal<ProductDetail[] | null> = signal(null);
 
-  filteredTodos = computed(() =>
+  filteredProducts = computed(() =>
     this.products()?.filter(x =>
       matchesTarget([x.name, x.shortDescription, x.description], this.searchValue())
     ) ?? []
@@ -23,6 +23,7 @@ export class ProductsService {
   loadProducts = async () => {
     this.products.set(null);
     const products = await getProducts();
+    console.log(products);
     this.products.set(products.map(mapProductDetail));
   }
 }

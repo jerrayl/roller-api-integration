@@ -1,0 +1,17 @@
+@if(!productsService.products()){
+  <div class="container" nz-flex nzGap="middle" nzWrap="wrap" nzJustify="center">
+    <ng-container *ngFor="let _ of [].constructor(8)">
+      <nz-card class="card" [nzLoading]="true" [style.border-radius.px]="20"/>
+    </ng-container>
+  </div>
+}
+@else{
+  @if (productsService.products()!.length === 0) {
+    <nz-empty nzNotFoundImage="simple" />
+  }
+  <div class="container" nz-flex nzGap="middle" nzWrap="wrap" nzJustify="center">
+    @for (item of productsService.filteredProducts(); track item) {
+      <card-component class="card" [title]="item.name" [description]="item.shortDescription" [imageUrl]="item.imageUrl" />
+    }
+  </div>
+}
