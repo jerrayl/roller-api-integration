@@ -23,7 +23,6 @@ export class ProductsService {
   loadProducts = async () => {
     this.products.set(null);
     const products = await getProducts();
-    console.log(products);
     this.products.set(products.map(mapProductDetail));
   }
 }

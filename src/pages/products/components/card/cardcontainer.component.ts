@@ -4,12 +4,12 @@ import { NzFlexModule } from 'ng-zorro-antd/flex';
 import { CardComponent } from './card.component';
 import { NzCardComponent } from 'ng-zorro-antd/card';
 import { NgFor } from '@angular/common';
-import { ProductsService } from '../../services/services.products';
+import { ProductsService } from '../../../../services/services.products';
 
 @Component({
   selector: 'cardcontainer-component',
   templateUrl: './cardcontainer.component.html',
-  styleUrl: './cardcontainer.component.css',
+  styleUrl: './cardcontainer.component.less',
   imports: [NzEmptyComponent, NzFlexModule, NzCardComponent, CardComponent, NgFor],
   standalone: true
 })

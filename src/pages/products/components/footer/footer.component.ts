@@ -7,7 +7,7 @@ import { NzTabsModule } from 'ng-zorro-antd/tabs';
 @Component({
   selector: 'footer-component',
   templateUrl: './footer.component.html',
-  styleUrl: './footer.component.css',
+  styleUrl: './footer.component.less',
   imports: [NzLayoutModule, NzTabsModule, NzIconModule, RouterLink],
   standalone: true
 })

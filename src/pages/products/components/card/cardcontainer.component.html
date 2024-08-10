@@ -11,7 +11,12 @@
   }
   <div class="container" nz-flex nzGap="middle" nzWrap="wrap" nzJustify="center">
     @for (item of productsService.filteredProducts(); track item) {
-      <card-component class="card" [title]="item.name" [description]="item.shortDescription" [imageUrl]="item.imageUrl" />
+      <card-component class="card" 
+        [id]="item.id"
+        [title]="item.name" 
+        [description]="item.shortDescription" 
+        [imageUrl]="item.imageUrl" 
+      />
     }
   </div>
 }
