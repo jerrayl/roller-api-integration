@@ -1,0 +1,41 @@
+<div class="session-list" nz-flex nzVertical nzGap="middle" nzJustify="center">
+    @for (product of products(); track product.id) {
+        <div nz-flex nzJustify="space-around" nzAlign="center">
+            <div nz-flex nzVertical nzJustify="center">
+                <span [style.font-size.px]="16">
+                    {{product.name}} 
+                    @if(product.description){
+                       <span [style.font-size.px]="14" nz-icon nzType="info-circle" nz-tooltip [nzTooltipTitle]="product.description" nzTooltipPlacement="rightTop"></span>
+                    } 
+                    @else {
+                        <span [style.margin-right.px]="10"></span>
+                    }   
+                </span>
+                <span>
+                    {{product.cost}}
+                </span>
+            </div>
+            
+            <nz-input-number-group class="number-input" [nzAddOnBefore]="addOnBeforeTemplate" [nzAddOnAfter]="addOnAfterTemplate">
+                <nz-input-number 
+                    [(ngModel)]="selectedProducts()[product.id]" 
+                    nzStep="1" 
+                    nzMin="0" 
+                    nzPlaceHolder="0"
+                    [style.padding-top.px]="3" 
+                    [style.padding-bottom.px]="3"
+                />
+            </nz-input-number-group>
+            <ng-template #addOnBeforeTemplate>
+                <button nz-button nzType="link" (click)="decrementSelectedProduct.emit(product.id)">
+                    -
+                </button>
+                </ng-template>
+                <ng-template #addOnAfterTemplate>
+                <button nz-button nzType="link" (click)="incrementSelectedProduct.emit(product.id)">
+                    +
+                </button>
+                </ng-template>
+        </div>
+    }
+</div>

@@ -1,0 +1,21 @@
+<div class="time-picker">
+    <div [style.padding-left.%]="15">
+        <h3>Select a time:</h3>
+    </div>
+    <div class="session-list" nz-flex nzGap="middle" nzJustify="center" nzWrap="wrap">
+        @for (session of sessions(); track session.name) {
+            <button nz-button nz-flex nzAlign="center" nzSize="large"
+                [nzType]="session.startTime === selectedStartTime() ? 'primary': 'default'"
+                (click)="selectStartTime.emit(session.startTime)" [style.box-sizing]="'content-box'">
+                <div nz-flex nzVertical nzJustify="center">
+                    <span>
+                        {{session.name}}
+                    </span>
+                    <span [style.font-size.px]="14">
+                        {{session.startTime}} - {{session.endTime}}
+                    </span>
+                </div>
+            </button>
+        }
+    </div>
+</div>

@@ -1,24 +1,45 @@
-<nz-layout [style.height.%]="100">
-  @if(!product()){
-  <nz-content nz-flex [style.height.%]="100" nzJustify="center" nzAlign="center">
-    <nz-spin nzSimple nzSize="large"></nz-spin>
-  </nz-content>
-  }
-  @else{
-  <nz-content>
-    <nz-page-header class="header" (back)="onBack()" nzBackIcon>
-      <nz-page-header-title>{{product()!.name}}</nz-page-header-title>
-      @if(productType()){
-        <nz-page-header-extra>
-          <nz-tag nzColor="blue">{{productType()}}</nz-tag>
-        </nz-page-header-extra>
-      }
-    </nz-page-header>
-    <img [alt]="product()!.name" [src]="product()!.imageUrl" />
-    <nz-descriptions nzColon="false">
-      <nz-descriptions-item>{{product()!.description}}</nz-descriptions-item>
-    </nz-descriptions>
-    <date-picker-component [selectedDate]="selectedDate()" (selectDate)="selectedDate.set($event)"/>
-  </nz-content>
-  }
+<nz-layout>
+    @if(!product()){
+        <nz-content nz-flex [style.height.vh]="100" nzJustify="center" nzAlign="center">
+            <nz-spin nzSimple nzSize="large"></nz-spin>
+        </nz-content>
+    }
+    @else{
+        <nz-content>
+            <nz-page-header class="header" (back)="onBack()" nzBackIcon>
+                <nz-page-header-title>{{product()!.name}}</nz-page-header-title>
+                @if(productType()){
+                    <nz-page-header-extra>
+                        <nz-tag nzColor="blue">{{productType()}}</nz-tag>
+                    </nz-page-header-extra>
+                }
+            </nz-page-header>
+            <img [alt]="product()!.name" [src]="product()!.imageUrl" />
+            <nz-descriptions nzColon="false">
+                <nz-descriptions-item>{{product()!.description}}</nz-descriptions-item>
+            </nz-descriptions>
+            <date-picker-component [selectedDate]="selectedDate()" (selectDate)="dateSelected($event)" />
+            @if(!productAvailabilityService.loading()){
+                <time-picker-component [selectedStartTime]="selectedStartTime()" [sessions]="product()!.sessions" (selectStartTime)="selectedStartTime.set($event)"/>
+                <product-picker-component 
+                    [selectedProducts]="selectedProducts()"
+                    [products]="product()!.products"
+                    (incrementSelectedProduct)="updateSelectedProduct($event, 1)" 
+                    (decrementSelectedProduct)="updateSelectedProduct($event, -1)"
+                />
+                <div  nz-flex nzJustify="center" [style.padding-top.px]="20" [style.padding-bottom.px]="20">
+                    <div class="button-container">
+                        <button nz-button nzBlock nzType="primary" nzSize="large">
+                            Make Booking
+                        </button>
+                    </div>
+                </div>
+            }
+            @else {
+                <nz-content nz-flex [style.height.vh]="50" nzJustify="center" nzAlign="center">
+                    <nz-spin nzSimple nzSize="large"></nz-spin>
+                </nz-content>
+            }
+        </nz-content>
+    }
 </nz-layout>

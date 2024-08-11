@@ -2,7 +2,7 @@ import { Component, computed, inject, Input, signal, WritableSignal } from '@ang
 import { Router } from '@angular/router';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import { ProductAvailabilityService } from './product-availability.service';
-import { compareDateComponent, getDate } from '../../utils';
+import { compareDateComponent, getISODate } from '../../utils';
 import { NzSpinComponent } from 'ng-zorro-antd/spin';
 import { NzFlexModule } from 'ng-zorro-antd/flex';
 import { PRODUCTS_ROUTE } from '../../app/app.routes';
@@ -12,12 +12,15 @@ import { NzDescriptionsModule } from 'ng-zorro-antd/descriptions';
 import { ProductTypeMappings } from './product-availability.constants';
 import { NzTagModule } from 'ng-zorro-antd/tag';
 import { DatePickerComponent } from './components/date-picker/date-picker.component';
+import { TimePickerComponent } from "./components/time-picker/time-picker.component";
+import { ProductPickerComponent } from './components/product-picker/product-picker.component';
+import { NzButtonModule } from 'ng-zorro-antd/button';
 
 @Component({
     selector: 'product-availability-page',
     templateUrl: './product-availability.page.html',
     styleUrl: './product-availability.page.less',
-    imports: [NzIconModule, NzSpinComponent, NzFlexModule, NzPageHeaderModule, NzLayoutModule, NzDescriptionsModule, NzTagModule, DatePickerComponent],
+    imports: [NzIconModule, NzSpinComponent, NzFlexModule, NzPageHeaderModule, NzLayoutModule, NzDescriptionsModule, NzTagModule, DatePickerComponent, TimePickerComponent, ProductPickerComponent, NzButtonModule],
     providers: [ProductAvailabilityService],
     standalone: true
 })
@@ -27,12 +30,14 @@ export class ProductAvailabilityPage {
     productType = computed(() => this.product()?.type ? ProductTypeMappings[this.product()?.type!] : '');
 
     selectedDate: WritableSignal<Date> = signal(new Date());
+    selectedStartTime: WritableSignal<string> = signal('');
+    selectedProducts: WritableSignal<{[key: string]: number}> = signal({});
 
     constructor(private _router: Router) { }
 
     @Input()
     set id(productId: string) {
-        this.productAvailabilityService.loadProductAvailability(getDate(this.selectedDate()), productId);
+        this.productAvailabilityService.loadProductAvailability(getISODate(this.selectedDate()), productId);
     }
 
     onBack() {
@@ -41,5 +46,10 @@ export class ProductAvailabilityPage {
 
     dateSelected(date: Date) {
         this.selectedDate.set(date);
+        this.productAvailabilityService.loadProductTimes(getISODate(date));
+    }
+
+    updateSelectedProduct(productId: string, change: number){
+        this.selectedProducts.update(selectedProducts => ({...selectedProducts, [productId]: Math.max((selectedProducts[productId] ?? 0) + change, 0)}))
     }
 }

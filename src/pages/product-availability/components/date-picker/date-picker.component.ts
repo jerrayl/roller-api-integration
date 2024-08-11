@@ -11,7 +11,7 @@ import { NzPopoverModule } from 'ng-zorro-antd/popover';
 @Component({
     selector: 'date-picker-component',
     templateUrl: './date-picker.component.html',
-    styleUrl: './date-picker.component.css',
+    styleUrl: './date-picker.component.less',
     imports: [NzFlexModule, NzIconModule, NzButtonModule, DateComponent, NzDatePickerModule, FormsModule, NzPopoverModule],
     standalone: true
 })

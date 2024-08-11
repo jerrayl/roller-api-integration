@@ -18,7 +18,7 @@ export const PRODUCT_AVAILABILITY =
         {
             "id": "2453",
             "name": "Child",
-            "description": "",
+            "description": "For ages 18 and under",
             "imageUrl": "https://cdn.rollerdigital.com/image/W_EGOxXzT0Wy6BzIgnC9uQ.png",
             "cost": 8.95,
             "tax": 10,

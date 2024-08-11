@@ -3,7 +3,9 @@
         Today
     }
     @else {
-        {{dayMappings[date.getDay()]}}
+        <span [style.font-size.px]="14">
+            {{dayMappings[date.getDay()]}}
+        </span>
         <span>
             {{date.getDate()}}
             {{monthMappings[date.getMonth()]}}
