@@ -18,7 +18,6 @@
     <nz-descriptions nzColon="false">
       <nz-descriptions-item>{{product()!.description}}</nz-descriptions-item>
     </nz-descriptions>
-    <h3>Select a date:</h3>
     <date-picker-component [selectedDate]="selectedDate()" (selectDate)="selectedDate.set($event)"/>
   </nz-content>
   }
