@@ -1,0 +1,61 @@
+<nz-header [style.color]="'white'" [style.font-size.px]="18">
+    <div nz-flex nzJustify="space-between">
+        Booking Details
+        <span [style.font-size.px]="20" nz-icon nzType="close" (click)="cancelCapacityReservation()"></span>
+    </div>
+</nz-header>
+
+<nz-content [style.margin-bottom.%]="30">
+    <nz-alert nzType="info" [nzMessage]="timerMessage"></nz-alert>
+    <ng-template #timerMessage>
+        <div nz-flex nzJustify="center">Your booking will be reserved for the next {{timeRemaining$ | async | date:'mm:ss' }}</div>
+    </ng-template>
+
+    <div nz-flex nzJustify="center">
+        <div [style.width.%]="90" [style.height.vh]="70">
+            <h2 [style.padding-top.px]="15">Your Details:</h2>
+            <form nz-form nzLayout="vertical" [formGroup]="form">
+                <nz-form-item>
+                    <nz-form-label>Name</nz-form-label>
+                    <nz-form-control nzErrorTip="Please enter your name">
+                        <nz-input-group nzPrefixIcon="user">
+                            <input nz-input nzBorderless nzSize="large" formControlName="firstName"
+                                placeholder="First Name" />
+                            <input nz-input nzBorderless nzSize="large" formControlName="lastName"
+                                placeholder="Last Name" />
+                        </nz-input-group>
+                    </nz-form-control>
+                </nz-form-item>
+
+                <nz-form-item>
+                    <nz-form-label>Email</nz-form-label>
+                    <nz-form-control nzErrorTip="Please enter a valid email address">
+                        <nz-input-group nzPrefixIcon="mail">
+                            <input nz-input nzBorderless nzSize="large" formControlName="email"
+                                placeholder="e.g. test@test.com" />
+                        </nz-input-group>
+                    </nz-form-control>
+                </nz-form-item>
+
+                <nz-form-item>
+                    <nz-form-label>Phone</nz-form-label>
+                    <nz-form-control nzErrorTip="Please enter a valid phone number">
+                        <nz-input-group nzPrefixIcon="phone">
+                            <input nz-input nzBorderless nzSize="large" formControlName="phone"
+                                placeholder="e.g. 0412345678" />
+                        </nz-input-group>
+                    </nz-form-control>
+                </nz-form-item>
+
+                <nz-form-item>
+                    <nz-form-control nzErrorTip="Please enter a valid phone number">
+                        <label nz-checkbox formControlName="acceptMarketing">I agree to receive marketing via
+                            email</label>
+                    </nz-form-control>
+                </nz-form-item>
+
+                <button nz-button nzBlock nzType="primary">Proceed To Payment</button>
+            </form>
+        </div>
+    </div>
+</nz-content>

@@ -5,7 +5,7 @@ import { ProductAvailabilityService } from './product-availability.service';
 import { compareDateComponent, getISODate } from '../../utils';
 import { NzSpinComponent } from 'ng-zorro-antd/spin';
 import { NzFlexModule } from 'ng-zorro-antd/flex';
-import { PRODUCTS_ROUTE } from '../../app/app.routes';
+import { BOOKING_DETAILS_ROUTE, PRODUCTS_ROUTE } from '../../app/app.routes';
 import { NzPageHeaderModule } from 'ng-zorro-antd/page-header';
 import { NzLayoutModule } from 'ng-zorro-antd/layout';
 import { NzDescriptionsModule } from 'ng-zorro-antd/descriptions';
@@ -42,6 +42,10 @@ export class ProductAvailabilityPage {
 
     onBack() {
         this._router.navigate([PRODUCTS_ROUTE]);
+    }
+
+    onMakeBooking() {
+        this._router.navigate([BOOKING_DETAILS_ROUTE]);
     }
 
     dateSelected(date: Date) {
