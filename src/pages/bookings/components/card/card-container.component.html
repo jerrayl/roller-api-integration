@@ -1,0 +1,20 @@
+@if(!bookingsService.bookings()){
+    <div class="container" nz-flex nzGap="middle" nzWrap="wrap" nzJustify="center">
+        <ng-container *ngFor="let _ of [].constructor(8)">
+            <nz-card class="card" [nzLoading]="true" [style.border-radius.px]="20" />
+        </ng-container>
+    </div>
+}
+@else{
+    <div class="container" nz-flex nzGap="middle" nzWrap="wrap" nzJustify="center">
+        @for (booking of bookingsService.bookings(); track booking.bookingReference) {
+            <card-component class="card" 
+                [bookingReference]="booking.bookingReference"
+                [status]="booking.status"
+                [total]="booking.total"
+                [name]="booking.name"
+                [items]="booking.items" 
+            />
+        }
+    </div>
+}

@@ -1,0 +1,12 @@
+<nz-footer>
+  <nz-tabset nzLinkRouter nzCentered nzTabPosition="bottom" [nzTabBarGutter]="20">
+    @for (tab of tabs; track tab) {
+        <nz-tab>
+        <a *nzTabLink nz-tab-link [routerLink]="tab.link">
+            <span nz-icon [nzType]="tab.icon"></span>
+            {{ tab.name }}
+        </a>
+        </nz-tab>
+    }
+  </nz-tabset>
+</nz-footer>

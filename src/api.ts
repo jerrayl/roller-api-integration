@@ -1,3 +1,4 @@
+import { BOOKING_DETAIL } from "./data/bookingDetail";
 import { PRODUCT_AVAILABILITY } from "./data/productAvailability"
 import { PRODUCT_DETAIL } from "./data/productDetail";
 
@@ -19,3 +20,8 @@ export const getProducts = async () => {
     await sleep(1000);
     return PRODUCT_DETAIL;
 } 
+
+export const getBookings = async (keywords: string) => {
+    await sleep(1000);
+    return BOOKING_DETAIL.filter(x => keywords.includes(x.bookingReference));
+}

@@ -86,10 +86,10 @@ export type BookingItem = {
 export type Booking = {
     bookingReference: string;
     uniqueId: string;
-    //createdDate: string;
+    createdDate: string;
     status: PaymentStatus;
     name: string;
-    //customerId: string;
+    customerId: string;
     total: number;
     items: BookingItem[];
 }

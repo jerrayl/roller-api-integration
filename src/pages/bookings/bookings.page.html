@@ -1,0 +1,17 @@
+<nz-header [style.color]="'white'" [style.font-size.px]="18">
+    <div nz-flex nzJustify="space-between">
+        Bookings
+        <span [style.font-size.px]="20" nz-icon nzType="search" (click)="showSearchForm = !showSearchForm"></span>
+    </div>
+</nz-header>
+
+<nz-content [style.margin-bottom.%]="15">
+    @if (showSearchForm || bookingsService.bookingReferences().length === 0) {
+       <search-form-component (toggleSearchForm)="showSearchForm = false"/>
+    }
+    @else {
+       <card-container-component />
+    }
+</nz-content>
+
+<footer-component [style.position]="'fixed'" [style.width.%]="100" [style.bottom]="0" />

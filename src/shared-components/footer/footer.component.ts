@@ -3,6 +3,7 @@ import { RouterLink } from '@angular/router';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import { NzLayoutModule } from 'ng-zorro-antd/layout';
 import { NzTabsModule } from 'ng-zorro-antd/tabs';
+import { BOOKINGS_ROUTE } from '../../app/app.routes';
 
 @Component({
   selector: 'footer-component',
@@ -21,7 +22,7 @@ export class FooterComponent {
     {
       name: 'My Bookings',
       icon: 'schedule',
-      link: ''
+      link: `/${BOOKINGS_ROUTE}`
     }
   ];
 }

@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { NzLayoutModule } from 'ng-zorro-antd/layout';
-import { CardContainerComponent } from './components/card/cardcontainer.component';
+import { CardContainerComponent } from './components/card/card-container.component';
 import { HeaderComponent } from "./components/header/header.component";
-import { FooterComponent } from "./components/footer/footer.component";
+import { FooterComponent } from '../../shared-components/footer/footer.component';
 
 @Component({
   selector: 'products-page',
@@ -11,5 +11,4 @@ import { FooterComponent } from "./components/footer/footer.component";
   templateUrl: './products.page.html'
 })
 export class ProductsPage {
-  title = 'roller-api-integration';
 }

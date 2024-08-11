@@ -46,6 +46,7 @@ export class ProductAvailabilityPage {
 
     dateSelected(date: Date) {
         this.selectedDate.set(date);
+        this.selectedStartTime.set('');
         this.productAvailabilityService.loadProductTimes(getISODate(date));
     }
 

@@ -28,7 +28,7 @@ export const PRODUCT_AVAILABILITY =
     "availabilities": [],
     "sessions": [
         {
-            "date": "2021-09-27",
+            "date": "2024-08-12",
             "name": "9 AM",
             "startTime": "09:00",
             "endTime": "10:00",
@@ -58,7 +58,7 @@ export const PRODUCT_AVAILABILITY =
             ]
         },
         {
-            "date": "2021-09-27",
+            "date": "2024-08-12",
             "name": "9:30 AM",
             "startTime": "09:30",
             "endTime": "10:30",
@@ -88,7 +88,7 @@ export const PRODUCT_AVAILABILITY =
             ]
         },
         {
-            "date": "2021-09-27",
+            "date": "2024-08-12",
             "name": "10 AM",
             "startTime": "10:00",
             "endTime": "11:00",
@@ -118,7 +118,7 @@ export const PRODUCT_AVAILABILITY =
             ]
         },
         {
-            "date": "2021-09-27",
+            "date": "2024-08-12",
             "name": "10:30 AM",
             "startTime": "10:30",
             "endTime": "11:30",
@@ -148,7 +148,7 @@ export const PRODUCT_AVAILABILITY =
             ]
         },
         {
-            "date": "2021-09-27",
+            "date": "2024-08-12",
             "name": "11 AM",
             "startTime": "11:00",
             "endTime": "12:00",
@@ -178,7 +178,7 @@ export const PRODUCT_AVAILABILITY =
             ]
         },
         {
-            "date": "2021-09-27",
+            "date": "2024-08-12",
             "name": "11:30 AM",
             "startTime": "11:30",
             "endTime": "12:30",
@@ -208,7 +208,7 @@ export const PRODUCT_AVAILABILITY =
             ]
         },
         {
-            "date": "2021-09-27",
+            "date": "2024-08-12",
             "name": "12 PM",
             "startTime": "12:00",
             "endTime": "13:00",
@@ -238,7 +238,7 @@ export const PRODUCT_AVAILABILITY =
             ]
         },
         {
-            "date": "2021-09-27",
+            "date": "2024-08-12",
             "name": "12:30 PM",
             "startTime": "12:30",
             "endTime": "13:30",
@@ -268,7 +268,7 @@ export const PRODUCT_AVAILABILITY =
             ]
         },
         {
-            "date": "2021-09-27",
+            "date": "2024-08-12",
             "name": "1 PM",
             "startTime": "13:00",
             "endTime": "14:00",
@@ -298,7 +298,7 @@ export const PRODUCT_AVAILABILITY =
             ]
         },
         {
-            "date": "2021-09-27",
+            "date": "2024-08-12",
             "name": "1:30 PM",
             "startTime": "13:30",
             "endTime": "14:30",
@@ -328,7 +328,7 @@ export const PRODUCT_AVAILABILITY =
             ]
         },
         {
-            "date": "2021-09-27",
+            "date": "2024-08-12",
             "name": "2 PM",
             "startTime": "14:00",
             "endTime": "15:00",
@@ -358,7 +358,7 @@ export const PRODUCT_AVAILABILITY =
             ]
         },
         {
-            "date": "2021-09-27",
+            "date": "2024-08-12",
             "name": "2:30 PM",
             "startTime": "14:30",
             "endTime": "15:30",
@@ -388,7 +388,7 @@ export const PRODUCT_AVAILABILITY =
             ]
         },
         {
-            "date": "2021-09-27",
+            "date": "2024-08-12",
             "name": "3 PM",
             "startTime": "15:00",
             "endTime": "16:00",
@@ -418,7 +418,7 @@ export const PRODUCT_AVAILABILITY =
             ]
         },
         {
-            "date": "2021-09-27",
+            "date": "2024-08-12",
             "name": "3:30 PM",
             "startTime": "15:30",
             "endTime": "16:30",
@@ -448,7 +448,7 @@ export const PRODUCT_AVAILABILITY =
             ]
         },
         {
-            "date": "2021-09-27",
+            "date": "2024-08-12",
             "name": "4 PM",
             "startTime": "16:00",
             "endTime": "17:00",
@@ -478,7 +478,7 @@ export const PRODUCT_AVAILABILITY =
             ]
         },
         {
-            "date": "2021-09-27",
+            "date": "2024-08-12",
             "name": "4:30 PM",
             "startTime": "16:30",
             "endTime": "17:30",
@@ -508,7 +508,7 @@ export const PRODUCT_AVAILABILITY =
             ]
         },
         {
-            "date": "2021-09-27",
+            "date": "2024-08-12",
             "name": "5 PM",
             "startTime": "17:00",
             "endTime": "18:00",
@@ -538,7 +538,7 @@ export const PRODUCT_AVAILABILITY =
             ]
         },
         {
-            "date": "2021-09-27",
+            "date": "2024-08-12",
             "name": "5:30 PM",
             "startTime": "17:30",
             "endTime": "18:30",
@@ -568,7 +568,7 @@ export const PRODUCT_AVAILABILITY =
             ]
         },
         {
-            "date": "2021-09-27",
+            "date": "2024-08-12",
             "name": "6 PM",
             "startTime": "18:00",
             "endTime": "19:00",
@@ -598,7 +598,7 @@ export const PRODUCT_AVAILABILITY =
             ]
         },
         {
-            "date": "2021-09-27",
+            "date": "2024-08-12",
             "name": "6:30 PM",
             "startTime": "18:30",
             "endTime": "19:30",
@@ -628,7 +628,7 @@ export const PRODUCT_AVAILABILITY =
             ]
         },
         {
-            "date": "2021-09-27",
+            "date": "2024-08-12",
             "name": "7 PM",
             "startTime": "19:00",
             "endTime": "20:00",

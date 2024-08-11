@@ -1,0 +1,34 @@
+<nz-card nzHoverable [style.border-radius.px]="20" [nzActions]="[actionEdit, actionCancel]">
+    <nz-card-meta [nzTitle]="titleTemplate" [nzDescription]="descriptionTemplate"></nz-card-meta>
+</nz-card>
+<ng-template #titleTemplate>
+    <div nz-flex nzJustify="space-between">
+        <p>{{name}}</p>
+        <p>${{total}}</p>
+    </div>
+</ng-template>
+<ng-template #descriptionTemplate>
+    <div nz-flex nzJustify="space-between">
+        <p [style.margin.px]="0">{{bookingReference}}</p>
+        <nz-tag [nzColor]="paymentStatusColors[status]">{{paymentStatusMappings[status]}}</nz-tag>
+    </div>
+    @if(productsService.products()){
+        <div nz-flex nzVertical [style.margin-top.px]="20">
+            @for (item of items; track item.productId) {
+                <nz-descriptions [nzColumn]="2" nzColon="false">
+                    <nz-descriptions-item><b>{{item.quantity}} x {{productsService.productNamesById()[item.productId]}}</b></nz-descriptions-item>
+                    <nz-descriptions-item>{{item.bookingDate}} {{item.startTime}}</nz-descriptions-item>
+                </nz-descriptions>
+            }
+        </div>
+    }
+    @else {
+        <nz-skeleton [nzActive]="true" [nzTitle]="false" [style.margin-top.px]="20"/>
+    }
+</ng-template>
+<ng-template #actionEdit>
+    <span nz-icon nzType="edit"></span>
+</ng-template>
+<ng-template #actionCancel>
+    <span nz-icon nzType="stop"></span>
+</ng-template>
